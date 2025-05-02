@@ -1,0 +1,120 @@
+# --- Project Information ---
+site_name: 'Сознание на Перекрестке: Курс по ТЭПО/EPET'
+site_url: 'https://antimortine.github.io/epet-course/'
+site_author: 'Андрей Копнин (Antimortine)'
+site_description: >-
+  Онлайн-курс, посвященный Теории Эмерджентного Предиктивного Опыта (ТЭПО/EPET)
+  и интегративному подходу к пониманию сознания через философию,
+  нейронауку и буддизм.
+
+# --- Repository ---
+repo_url: 'https://github.com/Antimortine/epet-course'
+repo_name: 'Antimortine/epet-course'
+edit_uri: 'edit/main/docs/'
+
+# --- Build Directories ---
+docs_dir: 'docs'
+site_dir: 'site'
+
+# --- Copyright ---
+copyright: 'Copyright © 2025 Андрей Копнин (Antimortine)'
+
+# --- Theme Configuration ---
+theme:
+  name: 'material'
+  language: 'ru'
+  logo: 'assets/images/favicon.svg'
+  favicon: 'assets/images/favicon.svg'
+  features:
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.code.copy
+  palette:
+    # Основная палитра (дневная тема)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: 'blue grey'
+      accent: 'light blue'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Дополнительная палитра (темная тема)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: 'blue grey'
+      accent: 'light blue'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# --- Navigation Structure ---
+# Определяет порядок и названия разделов в навигации
+# Пути указываются относительно папки docs_dir ('docs/')
+nav:
+  - 'Главная': 'index.md'
+  - 'Модуль 0: Введение':
+    - '0.1 Почему Сознание?': 'module0/01-why-consciousness.md'
+    - '0.2 Для Кого Курс? (Prerequisites)': 'module0/02-target-audience-prereqs.md'
+    - '0.3 Цели и Подход Курса': 'module0/03-goals-approach.md'
+    - '0.4 Формат и Навигация': 'module0/04-format-navigation.md'
+    - '0.5 Дорожная Карта': 'module0/05-roadmap.md'
+  - 'Модуль 1: Философия Сознания':
+    - '1.1 Проблема Сознание-Тело': 'module1/01-mind-body-problem.md'
+    - '1.2 Физикализм': 'module1/02-physicalism.md'
+    - '1.3 Ключевые Вызовы': 'module1/03-challenges.md'
+    - '1.4 Мысленные Эксперименты': 'module1/04-thought-experiments.md'
+    - '1.5 Итоги Модуля': 'module1/05-summary.md'
+  - 'Модуль 2: Буддийская Философия':
+    - '2.1 Зачем Буддизм?': 'module2/01-why-buddhism.md'
+    - '2.2 Три Характеристики': 'module2/02-three-marks.md'
+    - '2.3 Взаимозависимое Возникновение': 'module2/03-dependent-origination.md'
+    - '2.4 Пять Совокупностей': 'module2/04-five-aggregates.md'
+    - '2.5 Методы Наблюдения': 'module2/05-observation-methods.md'
+    - '2.6 Связь с ИСС': 'module2/06-altered-states.md'
+    - '2.7 Итоги Модуля': 'module2/07-summary.md'
+  - 'Модуль 3: Предиктивная Обработка (PP)':
+    - '...' # Добавь сюда структуру глав для Модуля 3
+  - 'Модуль 4: Теория Глобального Рабочего Пространства (GWT)':
+    - '...' # Добавь сюда структуру глав для Модуля 4
+  - 'Модуль 5: ТЭПО/EPET':
+    - '...' # Добавь сюда структуру глав для Модуля 5
+  - 'Модуль 6: Следствия и Приложения':
+    - '...' # Добавь сюда структуру глав для Модуля 6
+  - 'Глоссарий': 'glossary.md'
+  - 'Литература': 'references.md'
+
+# --- Markdown Extensions ---
+# Расширения для улучшения функциональности Markdown
+markdown_extensions:
+  - admonition # Блоки примечаний (note, warning, tip и т.д.)
+  - pymdownx.details # Скрываемые блоки (для спойлеров или доп. информации)
+  - pymdownx.superfences # Улучшенные блоки кода
+  - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite # Подсветка инлайн-кода (если понадобится)
+  - pymdownx.snippets # Вставка контента из других файлов
+  - pymdownx.emoji: # Поддержка эмодзи :smile:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed: # Вкладки внутри контента
+      alternate_style: true
+  - footnotes # Стандартные сноски Markdown
+  - attr_list # Добавление атрибутов HTML (id, class) к элементам Markdown
+  - md_in_html # Разрешить Markdown внутри HTML блоков
+  - toc: # Автоматическое оглавление для страницы
+      permalink: true # Добавлять якорные ссылки к заголовкам
+
+# --- Plugins ---
+# Плагины для расширения возможностей MkDocs
+plugins:
+  - search # Встроенный поиск по сайту
+  # - social # Если захочешь добавить кнопки "Поделиться"
+  # - mermaid2 # Для рендеринга диаграмм Mermaid.js (нужно будет добавить в Markdown)

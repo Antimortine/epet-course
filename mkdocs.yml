@@ -59,11 +59,10 @@ theme:
 nav:
   - 'Главная': 'index.md'
   - 'Модуль 0: Введение':
-    - '0.1 Почему Сознание?': 'module0/01-why-consciousness.md'
-    - '0.2 Для Кого Курс? (Prerequisites)': 'module0/02-target-audience-prereqs.md'
-    - '0.3 Цели и Подход Курса': 'module0/03-goals-approach.md'
-    - '0.4 Формат и Навигация': 'module0/04-format-navigation.md'
-    - '0.5 Дорожная Карта': 'module0/05-roadmap.md'
+    - '0.1 Загадка и Феномены': 'module0/01-Mystery-and-Phenomena.md'
+    - '0.2 Легкие и Трудная Проблемы': 'module0/02-Easy-vs-Hard-Problems.md'
+    - '0.3 Актуальность и Подход Курса': 'module0/03-Why-This-Course.md'
+    - '0.4 Prerequisites и Ресурсы': 'module0/04-Prerequisites-and-Resources.md'
   - 'Модуль 1: Философия Сознания':
     - '1.1 Проблема Сознание-Тело': 'module1/01-mind-body-problem.md'
     - '1.2 Физикализм': 'module1/02-physicalism.md'

@@ -26,8 +26,8 @@ theme:
   logo: 'assets/images/favicon.svg'
   favicon: 'assets/images/favicon.svg'
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
+    # - navigation.tabs
+    # - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.top

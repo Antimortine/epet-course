@@ -6,7 +6,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://antimortine.github.io/epet-course/glossary/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://antimortine.github.io/epet-course/references/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://antimortine.github.io/epet-course/module0/01-Mystery-and-Phenomena/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://antimortine.github.io/epet-course/module0/01-why-consciousness/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://antimortine.github.io/epet-course/module0/02-Easy-vs-Hard-Problems/</loc>
          <lastmod>2025-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -16,7 +36,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://antimortine.github.io/epet-course/module0/03-Why-This-Course/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://antimortine.github.io/epet-course/module0/03-goals-approach/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://antimortine.github.io/epet-course/module0/04-Prerequisites-and-Resources/</loc>
          <lastmod>2025-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -27,6 +57,11 @@
     </url>
     <url>
          <loc>https://antimortine.github.io/epet-course/module0/05-roadmap/</loc>
+         <lastmod>2025-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://antimortine.github.io/epet-course/module1/01-mind-body-problem/</loc>
          <lastmod>2025-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>

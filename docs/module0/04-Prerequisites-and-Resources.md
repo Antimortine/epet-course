@@ -51,7 +51,7 @@
 *   **На английском языке:**
     *   Stanford Encyclopedia of Philosophy (SEP): [https://plato.stanford.edu/](https://plato.stanford.edu/) — Статьи по всем основным философам, периодам и проблемам. **Ключевой ресурс.**
     *   Internet Encyclopedia of Philosophy (IEP): [https://iep.utm.edu/](https://iep.utm.edu/) — Альтернативная философская энциклопедия.
-    *   Crash Course Philosophy (YouTube): [Ссылка на плейлист] — Динамичное и доступное видео-введение.
+    *   [Crash Course Philosophy](https://thecrashcourse.com/topic/philosophy/) ([YouTube](https://www.youtube.com/playlist?list=PL8dPuuaLjXtNgK6MZucdYldNkMybYIHKR)):— Динамичное и доступное видео-введение.
 
 **II. Логика и Критическое Мышление:**
 
@@ -66,16 +66,16 @@
 *   **На русском языке:**
     *   Величковский Б. М. *Когнитивная наука: Основы психологии познания*. В 2 т. (М.: Смысл; Академия, 2006).
     *   Нуркова В. В., Березанская Н. Б. *Психология*. (М.: Юрайт, 2019 или новее).
-    *   Фаликман М. В. *Когнитивная наука: введение в современное исследование сознания*. Лекции на ПостНауке: [Ссылка]
+    *   Фаликман М. В. *Когнитивная наука: введение в современное исследование сознания*. Лекции на ПостНауке: https://postnauka.org/themes/falikman
 *   **На английском языке:**
     *   Anderson, J. R. *Cognitive Psychology and Its Implications*.
     *   Eysenck, M. W., & Keane, M. T. *Cognitive Psychology: A Student's Handbook*.
-    *   SEP: "Cognitive Science". [Ссылка]
+    *   [SEP: "Cognitive Science".](https://plato.stanford.edu/entries/cognitive-science/)
 
 **IV. Нейронауки и Физиология ЦНС:**
 
 *   **На русском языке:**
-    *   Дубынин В. А. Лекции по физиологии ЦНС (YouTube): [Ссылка на плейлист] — **Настоятельно рекомендуется.**
+    *   Дубынин В. А. Лекции по физиологии ЦНС ([YouTube](https://www.youtube.com/watch?v=7QNQLGV3DjA)): — **Настоятельно рекомендуется.**
     *   Александров Ю. И. *Основы психофизиологии*.
     *   Данилова Н. Н. *Психофизиология*.
 *   **На английском языке:**
@@ -91,8 +91,8 @@
 *   **На английском языке:**
     *   **SEP:** Статьи "Consciousness", "Qualia", "Zombies", "Qualia: The Knowledge Argument", "Mind/Brain Identity Theory", "Functionalism", "Emergent Properties", "Mental Causation". **Обязательно к ознакомлению.**
     *   **IEP:** Статьи "Consciousness", "Qualia", "Explanatory Gap", "The Hard Problem of Consciousness", "Zombies, Philosophical".
-    *   Chalmers, D. J. (1995). "Facing Up to the Problem of Consciousness". [Ссылка]
-    *   Chalmers, D. J. (1996). *The Conscious Mind: In Search of a Fundamental Theory*. [Ссылка]
+    *   [Chalmers, D. J. (1995). "Facing Up to the Problem of Consciousness".](https://consc.net/papers/facing.pdf)
+    *   [Chalmers, D. J. (1996). *The Conscious Mind: In Search of a Fundamental Theory*. Oxford University Press.](https://personal.lse.ac.uk/ROBERT49/teaching/ph103/pdf/Chalmers_The_Conscious_Mind.pdf) 
     *   Kim, J. *Philosophy of Mind*. (Westview Press, 3rd ed. or later) - Хороший вводный учебник по аналитической философии сознания.
     *   Heil, J. *Philosophy of Mind: A Contemporary Introduction*. (Routledge, 3rd ed. or later) - Еще один популярный учебник.
 

@@ -4,6 +4,7 @@
 *   Анохин, К. В. - Лекции и статьи (Рекомендуется поиск актуальных материалов на платформах вроде ПостНаука, YouTube).
 *   Андерсон, Дж. Р. (Anderson, J. R.) (2019). *Cognitive Psychology and Its Implications* (9th ed.). Worth Publishers. *(Или более новое издание)*
 *   Баарс, Б. Дж. (Baars, B. J.) (1988). *A Cognitive Theory of Consciousness*. Cambridge University Press.
+*   Баарс, Б. Дж. (Baars, B. J.) (1997). In the Theater of Consciousness: The Workspace of the Mind. *Journal of Consciousness Studies*, 4(4), 292-309.
 *   Бер, М. Ф., Коннорс, Б. У., Парадизо, М. А. (Bear, M. F., Connors, B. W., & Paradiso, M. A.) (2016). *Neuroscience: Exploring the Brain* (4th ed.). Lippincott Williams & Wilkins. *(Или более новое издание)*
 *   Блэкмор, С. Дж., Вольперт, Д. М., & Фрит, К. Д. (Blakemore, S. J., Wolpert, D. M., & Frith, C. D.) (1998). Central cancellation of self-produced tickle sensation. *Nature neuroscience*, 1(7), 635-640. https://doi.org/10.1038/2870
 *   Бодхи, Бхикку (Bodhi, Bhikkhu). (2000). *Transcendental Dependent Arising: A Translation and Exposition of the Upanisa Sutta*. Buddhist Publication Society. Доступно: [http://www.buddhanet.net/pdf_file/transcendental.pdf](http://www.buddhanet.net/pdf_file/transcendental.pdf)
@@ -12,6 +13,7 @@
 *   Васильев, В. В. (2009). *Трудная проблема сознания*. М.: Прогресс-Традиция.
 *   Вайтль, Д., Бирбаумер, Н., Грузельер, Дж., Джемисон, Г. А., Кочубей, Б., Кюблер, А., ... & Отт, У. (Vaitl, D., Birbaumer, N., Gruzelier, J., Jamieson, G. A., Kotchoubey, B., Kübler, A., ... & Ott, U.) (2005). Psychobiology of altered states of consciousness. *Psychological bulletin*, 131(1), 98–127. https://doi.org/10.1037/0033-2909.131.1.98
 *   Величковский, Б. М. (2006). *Когнитивная наука: Основы психологии познания*. В 2 т. М.: Смысл; Академия.
+*   Визе, В., & Метцингер, Т. (Wiese, W., & Metzinger, T.) (2017). Vanilla PP for philosophers: A primer on predictive processing. In T. Metzinger & W. Wiese (Eds.), *Philosophy and predictive processing*. MIND Group. [https://predictive-mind.net/papers/vanilla-pp-for-philosophers](https://predictive-mind.net/papers/vanilla-pp-for-philosophers)
 *   Воллес, Б. А. (Wallace, B. A.) (2007). *Contemplative Science: Where Buddhism and Neuroscience Converge*. Columbia University Press.
 *   Газзанига, М. С., Иври, Р. Б., Мангун, Г. Р. (Gazzaniga, M. S., Ivry, R. B., & Mangun, G. R.) (2019). *Cognitive Neuroscience: The Biology of the Mind* (5th ed.). W. W. Norton & Company. *(Или более новое издание)*
 *   Гетин, Р. (Gethin, R.) (1998). *The Foundations of Buddhism*. Oxford University Press.
@@ -19,6 +21,8 @@
 *   Гриффитс, Т. Л., Кемп, К., & Тененбаум, Дж. Б. (Griffiths, T. L., Kemp, C., & Tenenbaum, J. B.) (2008). Bayesian models of cognition. In R. Sun (Ed.), *The Cambridge handbook of computational psychology* (pp. 59-100). Cambridge University Press.
 *   Гунаратана, Х. (Gunaratana, H.) (2011). *Mindfulness in Plain English* (Anniversary ed.). Wisdom Publications.
 *   Данилова, Н. Н. (2012). *Психофизиология*. М.: Аспект Пресс.
+*   Деан, С. (Dehaene, S.) (2014). *Consciousness and the Brain: Deciphering How the Brain Codes Our Thoughts*. Viking.
+*   Деан, С., & Шанжё, Ж.-П. (Dehaene, S., & Changeux, J. P.) (2011). Experimental and theoretical approaches to conscious processing. *Neuron*, 70(2), 200-227. https://doi.org/10.1016/j.neuron.2011.03.018
 *   Джеймс, У. (James, W.) (1890). *The Principles of Psychology*. Henry Holt and Company.
 *   Джексон, Ф. (Jackson, F.) (1982). Epiphenomenal Qualia. *Philosophical Quarterly*, 32(127), 127–136. https://doi.org/10.2307/2219489
 *   Дубынин, В. А. - Лекции по физиологии ЦНС и нейробиологии (Рекомендуется поиск актуальных плейлистов на YouTube).
@@ -38,6 +42,7 @@
 *   Левин, Дж. (Levine, J.) (1983). Materialism and qualia: The explanatory gap. *Pacific Philosophical Quarterly*, 64(4), 354–361.
 *   Лутц, А., & Томпсон, Э. (Lutz, A., & Thompson, E.) (2003). Neurophenomenology: Integrating Subjective Experience and Brain Dynamics in the Neuroscience of Consciousness. *Journal of Consciousness Studies*, 10(9-10), 31–52.
 *   Лутц, А., Слагтер, Х. А., Данн, Дж. Д., & Дэвидсон, Р. Дж. (Lutz, A., Slagter, H. A., Dunne, J. D., & Davidson, R. J.) (2008). Attention regulation and monitoring in meditation. *Trends in cognitive sciences*, 12(4), 163–169. https://doi.org/10.1016/j.tics.2008.01.005
+*   Машур, Г. А., Рульфсема, П., Шанжё, Ж.-П., & Деан, С. (Mashour, G. A., Roelfsema, P., Changeux, J. P., & Dehaene, S.) (2020). Conscious processing and the global neuronal workspace hypothesis. *Neuron*, 105(5), 776-798. https://doi.org/10.1016/j.neuron.2020.01.026
 *   Нагель, Т. (Nagel, T.) (1974). What Is It Like to Be a Bat? *The Philosophical Review*, 83(4), 435–450. https://doi.org/10.2307/2183914
 *   Николс, Д. Е. (Nichols, D. E.) (2016). Psychedelics. *Pharmacological reviews*, 68(2), 264–355. https://doi.org/10.1124/pr.115.011478
 *   Никифоров, А.Л. *Книга по логике*. (Ищите актуальное издание).
@@ -52,6 +57,7 @@
 *   Сет, А. К. (Seth, A. K.) (2017). Your brain hallucinates your conscious reality [Video]. TED Conferences. [https://www.ted.com/talks/anil_seth_your_brain_hallucinates_your_conscious_reality](https://www.ted.com/talks/anil_seth_your_brain_hallucinates_your_conscious_reality)
 *   Сет, А. К. (Seth, A. K.) (2021). *Being You: A New Science of Consciousness*. Penguin Books Ltd.
 *   Сет, А. К., & Фристон, К. Дж. (Seth, A. K., & Friston, K. J.) (2016). Active interoceptive inference and the emotional brain. *Philosophical Transactions of the Royal Society B: Biological Sciences*, 371(1708), 20160007. https://doi.org/10.1098/rstb.2016.0007
+*   Зингер, В. (Singer, W.) (1999). Neuronal synchrony: a versatile code for the definition of relations? *Neuron*, 24(1), 49-65, 111-125. https://doi.org/10.1016/s0896-6273(00)80821-1
 *   Солсо, Р. Л. (2006). *Когнитивная психология*. СПб.: Питер.
 *   Танг, И.-Ю., Хёльцель, Б. К., & Познер, М. И. (Tang, Y. Y., Hölzel, B. K., & Posner, M. I.) (2015). The neuroscience of mindfulness meditation. *Nature Reviews Neuroscience*, 16(4), 213–225. https://doi.org/10.1038/nrn3916
 *   Тханиссаро Бхиккху (Thanissaro Bhikkhu) - Работы и переводы доступны на [Dharma Talks](https://www.dhammatalks.org/).
@@ -65,7 +71,6 @@
 *   Хохви, Я. (Hohwy, J.) (2013). *The predictive mind*. Oxford University Press.
 *   Чалмерс, Д. Дж. (Chalmers, D. J.) (1995). Facing Up to the Problem of Consciousness. *Journal of Consciousness Studies*, 2(3), 200–219.
 *   Чалмерс, Д. Дж. (Chalmers, D. J.) (1996). *The Conscious Mind: In Search of a Fundamental Theory*. Oxford University Press.
-*   Визе, В., & Метцингер, Т. (Wiese, W., & Metzinger, T.) (2017). Vanilla PP for philosophers: A primer on predictive processing. In T. Metzinger & W. Wiese (Eds.), *Philosophy and predictive processing*. MIND Group. [https://predictive-mind.net/papers/vanilla-pp-for-philosophers](https://predictive-mind.net/papers/vanilla-pp-for-philosophers)
 
 ## Онлайн Энциклопедии и Ресурсы
 

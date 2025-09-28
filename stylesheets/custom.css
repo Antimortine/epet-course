@@ -1,2 +1,25 @@
 .mermaid svg text,
 .mermaid svg tspan { font-size: 22px !important; fill: #111 !important; }
+
+/* --- 1) Подписи на рёбрах (SVG) — сделать светлыми и крупными --- */
+.mermaid .edgeLabel text,
+.mermaid .edgeLabel tspan {
+  fill: #e5e7eb !important;      /* светлый текст */
+  font-size: 22px !important;
+  paint-order: stroke;            /* тонкий обвод для читабельности */
+  stroke: rgba(0,0,0,0.25);
+  stroke-width: 1px;
+}
+
+/* --- 2) Заголовки сабграфов (кластеры) — тоже светлыми --- */
+.mermaid .cluster text,
+.mermaid .cluster .label,
+.mermaid .cluster-label text {
+  fill: #e5e7eb !important;      /* цвет текста в заголовке */
+  font-size: 22px !important;
+}
+
+/* (необязательно) чуть светлее линии, чтобы не терялись на тёмном фоне */
+.mermaid .edgePath path {
+  stroke: #c7ced6 !important;
+}

@@ -1,2 +1,2 @@
-.mermaid svg text { font-size: 22px !important; }
-.mermaid .label, .mermaid .nodeLabel, .mermaid .edgeLabel { font-size: 22px !important; line-height: 1.25; }
+.mermaid svg text,
+.mermaid svg tspan { font-size: 22px !important; fill: #111 !important; }

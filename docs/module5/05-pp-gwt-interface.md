@@ -43,7 +43,12 @@
 **Схема Интерфейса PP-GWT в EPET:**
 
 ```mermaid
-%%{init: { 'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 120, 'wrappingWidth': 260, 'htmlLabels': true }}}%%
+%%{init: {
+  'theme': 'base',
+  'themeVariables': { 'fontSize': '22px', 'textColor': '#111' },
+  'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 120, 'wrappingWidth': 260, 'htmlLabels': false }
+}}%%
+
 graph TD
     %% --- классы ---
     classDef hidden fill:transparent,stroke:transparent,color:transparent;

@@ -136,6 +136,9 @@ extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
   - js/mermaid.js
 
+extra_css:
+  - stylesheets/custom.css
+
 # --- Plugins ---
 # Плагины для расширения возможностей MkDocs
 plugins:

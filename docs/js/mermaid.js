@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startOnLoad: true,
     theme: "dark",
     themeVariables: {
-        'fontSize': '16px'
+        'fontSize': '24px'
     }
   });
 });

@@ -3,8 +3,6 @@ window.addEventListener("load", () => {
   // Инициализируем Mermaid с базовыми настройками, чтобы она просто работала
   mermaid.initialize({ startOnLoad: true, theme: "base" });
 
-  // --- Вот и наша "тяжелая артиллерия" ---
-
   // Функция, которая будет насильно менять размер шрифта
   const fixMermaidFonts = (container) => {
     const svg = container.querySelector("svg");

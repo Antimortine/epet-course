@@ -10,14 +10,15 @@ function themeFromMaterial() {
   return {
     fontSize: '22px',
     fontFamily: 'var(--md-text-font, system-ui, "Inter", "Roboto", sans-serif)',
-    // тёмный текст по умолчанию
-    textColor: fg,
-    primaryTextColor: fg,
-    // мягкий фон для нод
+    /* КЛЮЧЕВОЕ: делаем тёмный текст для нод по умолчанию */
+    textColor: '#111',
+    primaryTextColor: '#111',
+    secondaryTextColor: '#111',
+    /* мягкие фоны/линии */
     mainBkg: codeBg,
     primaryColor: codeBg,
     secondaryColor: bg,
-    lineColor: line,
+    lineColor: line
   };
 }
 
@@ -27,17 +28,15 @@ function initMermaid() {
     securityLevel: 'loose',
     theme: 'base',
     themeVariables: themeFromMaterial(),
-    // базовые «воздушные» отступы/обёртка текста
-    flowchart: { nodeSpacing: 60, rankSpacing: 70, htmlLabels: true, diagramPadding: 16 },
-    wrappingWidth: 240,
+    flowchart: { nodeSpacing: 70, rankSpacing: 110, htmlLabels: true, diagramPadding: 16 },
+    wrappingWidth: 260
   });
 }
 
 initMermaid();
 window.mermaid = mermaid;
 
-// Перерисовка на каждой «страничной» навигации/переключении темы
 document$.subscribe(() => {
-  initMermaid();            // обновить цвета под текущую тему
+  initMermaid();
   mermaid.run({ querySelector: '.mermaid' });
 });

@@ -125,10 +125,10 @@ markdown_extensions:
   - attr_list # Добавление атрибутов HTML (id, class) к элементам Markdown
   - md_in_html # Разрешить Markdown внутри HTML блоков
   - pymdownx.superfences:
-    custom_fences:
-      - name: mermaid
-        class: mermaid
-        format: !!python/name:pymdownx.superfences.fence_code_format
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - toc: # Автоматическое оглавление для страницы
       permalink: true # Добавлять якорные ссылки к заголовкам
 

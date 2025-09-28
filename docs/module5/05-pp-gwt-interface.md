@@ -43,41 +43,36 @@
 **Схема Интерфейса PP-GWT в EPET:**
 
 ```mermaid
-%%{init: {
-  'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 110, 'wrappingWidth': 260, 'htmlLabels': true }
-}}%%
+%%{init: { 'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 120, 'wrappingWidth': 260, 'htmlLabels': true }}}%%
 graph TD
-    %% --- классы ---
     classDef hidden fill:transparent,stroke:transparent,color:transparent;
-    classDef default color:#111;  %% чёрный текст по умолчанию для ВСЕХ нод
+    classDef default color:#111;
 
-    %% --- Пэддеры и невидимые рёбра (ДОЛЖНЫ идти самыми первыми!) ---
-    _padPP["\n\n"]:::hidden --> A
-    _padGWT["\n\n"]:::hidden --> E
+    %% Пэддеры (первые строки!) фиксируют отступ под заголовком сабграфа
+    _padPP["\n\n\n"]:::hidden --> A
+    _padGWT["\n\n\n"]:::hidden --> E
     linkStyle 0 stroke:transparent,fill:transparent;
     linkStyle 1 stroke:transparent,fill:transparent;
 
-    %% --- Граф ---
     subgraph "Бессознательная Обработка (PP)"
-        direction TB
-        A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --> B(Сравнение с Сенсорикой);
-        C[Сенсорный Вход] --> B;
-        B -- "Восходящие Ошибки Предсказания" --> A;
-        A -- "Представления с Высокой Точностью" --> D{Конкуренция за Доступ};
+      direction TB
+      A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --> B(Сравнение с Сенсорикой);
+      C[Сенсорный Вход] --> B;
+      B -- "Восходящие Ошибки Предсказания" --> A;
+      A -- "Представления с Высокой Точностью" --> D{Конкуренция за Доступ};
     end
 
     subgraph "Сознательный Доступ (GWT)"
-        direction TB
-        D -- "Преодоление Порога" --> E["`Глобальное Рабочее Пространство (Нейронное Воспламенение)`"];
-        E -- "Глобальное Вещание" --> F(("`Множество Потребителей: Память, Речь, Планирование`"));
+      direction TB
+      D -- "Преодоление Порога" --> E["`Глобальное Рабочее Пространство (Нейронное Воспламенение)`"];
+      E -- "Глобальное Вещание" --> F(("`Множество Потребителей: Память, Речь, Планирование`"));
     end
 
     E -- "Высокоуровневый Контекст/Ограничение" --> A;
 
-    %% --- Точечные стили (оставляю твои) ---
-    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#111
-    style E fill:#ccf,stroke:#333,stroke-width:2px,color:#111
-
+    %% При желании можно оставить точечные стили:
+    style A fill:#ffd6ff,stroke:#333,stroke-width:2px,color:#111
+    style E fill:#e6e9ff,stroke:#333,stroke-width:2px,color:#111
 ```
 
 **Заключение:**

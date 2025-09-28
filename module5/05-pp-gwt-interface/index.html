@@ -1574,7 +1574,9 @@
 </li>
 </ol>
 <p><strong>Схема Интерфейса PP-GWT в EPET:</strong></p>
-<pre class="mermaid"><code>graph TD
+<pre class="mermaid"><code>%%{init: {'securityLevel': 'loose', 'theme': 'base',
+          'themeVariables': { 'fontSize': '22px', 'fontFamily': 'Inter, Roboto, Arial, sans-serif' }}}%%
+graph TD
     subgraph "Бессознательная Обработка (PP)"
         A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --&gt; B(Сравнение с Сенсорикой);
         C[Сенсорный Вход] --&gt; B;

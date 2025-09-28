@@ -110,7 +110,6 @@ nav:
 markdown_extensions:
   - admonition # Блоки примечаний (note, warning, tip и т.д.)
   - pymdownx.details # Скрываемые блоки (для спойлеров или доп. информации)
-  - pymdownx.superfences # Улучшенные блоки кода
   - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
       anchor_linenums: true
       line_spans: __span
@@ -125,8 +124,16 @@ markdown_extensions:
   - footnotes # Стандартные сноски Markdown
   - attr_list # Добавление атрибутов HTML (id, class) к элементам Markdown
   - md_in_html # Разрешить Markdown внутри HTML блоков
+  - pymdownx.superfences:
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
   - toc: # Автоматическое оглавление для страницы
       permalink: true # Добавлять якорные ссылки к заголовкам
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
 
 # --- Plugins ---
 # Плагины для расширения возможностей MkDocs

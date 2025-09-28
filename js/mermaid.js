@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   mermaid.initialize({
     startOnLoad: true,
-    theme: "dark",
+    theme: "base", 
     themeVariables: {
-        'fontSize': '24px'
+        'fontSize': '24px' 
     }
   });
 });

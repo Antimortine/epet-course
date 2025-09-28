@@ -1574,10 +1574,13 @@
 </li>
 </ol>
 <p><strong>Схема Интерфейса PP-GWT в EPET:</strong></p>
-<pre class="mermaid"><code>%%{init: {'securityLevel': 'loose', 'theme': 'base',
-          'themeVariables': { 'fontSize': '22px', 'fontFamily': 'Inter, Roboto, Arial, sans-serif' }}}%%
+<pre class="mermaid"><code>%%{init: {'flowchart': { 'nodeSpacing': 60, 'rankSpacing': 70, 'wrappingWidth': 240 }}}%%
 graph TD
+    classDef hidden fill:transparent,stroke:transparent;
+
     subgraph "Бессознательная Обработка (PP)"
+        direction TB
+        _padPP[" "]:::hidden
         A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --&gt; B(Сравнение с Сенсорикой);
         C[Сенсорный Вход] --&gt; B;
         B -- "Восходящие Ошибки Предсказания" --&gt; A;
@@ -1585,6 +1588,8 @@ graph TD
     end
 
     subgraph "Сознательный Доступ (GWT)"
+        direction TB
+        _padGWT[" "]:::hidden
         D -- "Преодоление Порога" --&gt; E["Глобальное Рабочее Пространство&lt;br&gt;(Нейронное Воспламенение)"];
         E -- "Глобальное Вещание" --&gt; F((Множество&lt;br&gt;Потребителей:&lt;br&gt;Память, Речь,&lt;br&gt;Планирование));
     end

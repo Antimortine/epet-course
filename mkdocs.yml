@@ -133,8 +133,8 @@ markdown_extensions:
       permalink: true # Добавлять якорные ссылки к заголовкам
 
 extra_javascript:
-  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
-  - js/mermaid.mjs
+  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
 
 # --- Plugins ---
 # Плагины для расширения возможностей MkDocs

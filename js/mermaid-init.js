@@ -7,71 +7,31 @@
       securityLevel: 'loose',
       theme: 'base',
 
-      // крупный кегль + базовые переменные темы
       themeVariables: {
         fontSize: '22px',
         fontFamily: 'var(--md-text-font, system-ui, "Inter", "Roboto", sans-serif)',
         textColor: '#111',
-        lineColor: '#e6edf5'   // ← светлые линии по умолчанию
+        lineColor: '#e6edf5'
       },
 
-      // ВСТРАИВАЕМЫЕ в SVG стили: бьют тему и внешний CSS
       themeCSS: `
-        /* Узлы: тёмный текст на светлом фоне */
         g.node text, g.node tspan { fill:#111 !important; font-size:22px !important; }
 
-        /* Подписи на рёбрах — Mermaid 11 (g.label …) */
-        g.label text,
-        g.label tspan,
-        g.label .text-outer-tspan,
-        g.label .text-inner-tspan {
-          fill:#e5e7eb !important; font-size:22px !important;
-          paint-order:stroke; stroke:rgba(0,0,0,.35); stroke-width:1px;
-        }
-        g.label rect.background {
-          fill:rgba(0,0,0,.35) !important; stroke:transparent !important; rx:4px; ry:4px;
-        }
-
-        /* Fallback для старой разметки .edgeLabel */
+        /* подписи на рёбрах */
+        g.label text, g.label tspan,
         g.edgeLabel text, g.edgeLabel tspan, text.edgeLabel, text.edgeLabel tspan {
           fill:#e5e7eb !important; font-size:22px !important;
           paint-order:stroke; stroke:rgba(0,0,0,.35); stroke-width:1px;
         }
+        g.label rect.background { fill:rgba(0,0,0,.35) !important; stroke:transparent !important; rx:4px; ry:4px; }
 
-        /* Заголовки сабграфов (кластеры) — светлые */
+        /* заголовки сабграфов */
         g.cluster g.label text, g.cluster g.label tspan,
-        g.cluster text, g.cluster tspan {
-          fill:#e5e7eb !important; font-size:22px !important;
-        }
-
-        /* ===== ЛИНИИ И СТРЕЛКИ — СДЕЛАТЬ СВЕТЛЕЕ И ТОЛЩЕ ===== */
-        /* Сами рёбра */
-        .edgePath path, path.flowchart-link {
-          stroke:#e6edf5 !important;           /* светлый серо-голубой */
-          stroke-width:2px !important;         /* чуть толще, чтобы читалось */
-          opacity:1 !important;
-        }
-
-        /* Головки стрелок (сидят в <defs><marker>…>) */
-        marker path, marker polygon, marker rect, marker circle {
-          fill:#e6edf5 !important;
-          stroke:#e6edf5 !important;
-          opacity:1 !important;
-        }
-        /* На случай кастомных классов в разных релизах */
-        .arrowMarkerPath, .arrowHeadPath {
-          fill:#e6edf5 !important;
-          stroke:#e6edf5 !important;
-        }
-        /* Иногда генератор кладёт marker-элементы без классов — пробиваем через defs */
-        defs marker path, defs marker polygon {
-          fill:#e6edf5 !important;
-          stroke:#e6edf5 !important;
-        }
+        g.cluster text, g.cluster tspan { fill:#e5e7eb !important; font-size:22px !important; }
       `,
 
       flowchart: {
-        htmlLabels: false,            // все лейблы как SVG-текст: красить проще и надёжнее
+        htmlLabels: false,
         nodeSpacing: 70,
         rankSpacing: 120,
         subGraphTitleMargin: 32,
@@ -81,24 +41,46 @@
     });
   }
 
-  function runMermaid() {
-    window.mermaid.run({ querySelector: '.mermaid' });
+  function forceContrast(svg) {
+    const id = svg.getAttribute('id');
+    if (!id) return;
+
+    const css = `
+#${id} .flowchart-link, 
+#${id} .edgePath .path { 
+  stroke:#e6edf5 !important; 
+  stroke-width:2px !important; 
+  opacity:1 !important;
+}
+#${id} .marker, 
+#${id} .arrowheadPath, 
+#${id} defs marker path, 
+#${id} defs marker polygon { 
+  fill:#e6edf5 !important; 
+  stroke:#e6edf5 !important; 
+  opacity:1 !important;
+}
+`;
+
+    let styleEl = svg.querySelector('style');
+    if (!styleEl) {
+      styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+      svg.prepend(styleEl);
+    }
+    styleEl.appendChild(document.createTextNode(css));
   }
 
-  // первый рендер
-  initMermaid();
-  runMermaid();
+  function runAndPatch() {
+    return window.mermaid.run({ querySelector: '.mermaid' })
+      .then(() => document.querySelectorAll('.mermaid svg').forEach(forceContrast));
+  }
 
-  // перерисовка при навигации в Material
+  initMermaid();
+  runAndPatch();
+
   if (window.document$) {
-    window.document$.subscribe(() => {
-      initMermaid();
-      runMermaid();
-    });
+    window.document$.subscribe(() => { initMermaid(); runAndPatch(); });
   } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      initMermaid();
-      runMermaid();
-    });
+    document.addEventListener('DOMContentLoaded', () => { initMermaid(); runAndPatch(); });
   }
 })();

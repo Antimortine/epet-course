@@ -1,39 +1,41 @@
-/* === Mermaid x MkDocs Material — принудительная читабельность === */
-/* Работает и при htmlLabels:false (SVG-текст), и при htmlLabels:true (HTML-лейблы). */
+/* === Mermaid x MkDocs Material — читабельность и единый кегль === */
 
-/* 0) База: весь текст внутри диаграмм — 22px */
+/* 0) База: любой текст внутри мермейда — 22px и непрозрачный */
 .md-typeset svg[id^="mermaid-"] text,
 .md-typeset svg[id^="mermaid-"] tspan {
   font-size: 22px !important;
   opacity: 1 !important;
+  fill-opacity: 1 !important;
 }
 
-/* 1) Текст внутри NODES — тёмный (узлы у нас светлые) */
+/* 1) Текст внутри УЗЛОВ — тёмный (узлы у нас светлые) */
 .md-typeset svg[id^="mermaid-"] g.node text,
-.md-typeset svg[id^="mermaid-"] .nodeLabel,
-.md-typeset svg[id^="mermaid-"] .label {
+.md-typeset svg[id^="mermaid-"] g.node tspan,
+.md-typeset svg[id^="mermaid-"] g.node .text-outer-tspan,
+.md-typeset svg[id^="mermaid-"] g.node .text-inner-tspan,
+.md-typeset .mermaid .nodeLabel,
+.md-typeset .mermaid .label {
   fill: #111 !important;
   color: #111 !important;
 }
 
-/* 2) Подписи на РЁБРАХ (SVG-вариант, htmlLabels:false) — СВЕТЛЫЕ + тонкая обводка */
-.md-typeset svg[id^="mermaid-"] g.edgeLabel,
+/* 2) ПОДПИСИ НА РЁБРАХ (SVG-вариант, htmlLabels:false)
+      — светлые + тонкая обводка для контраста на тёмном фоне */
 .md-typeset svg[id^="mermaid-"] g.edgeLabel text,
 .md-typeset svg[id^="mermaid-"] g.edgeLabel tspan,
+.md-typeset svg[id^="mermaid-"] g.edgeLabel .text-outer-tspan,
+.md-typeset svg[id^="mermaid-"] g.edgeLabel .text-inner-tspan,
 .md-typeset svg[id^="mermaid-"] text.edgeLabel,
-.md-typeset svg[id^="mermaid-"] text.edgeLabel tspan,
-.md-typeset svg[id^="mermaid-"] g.edgeLabel textPath {
+.md-typeset svg[id^="mermaid-"] text.edgeLabel tspan {
   fill: #e5e7eb !important;
   font-size: 22px !important;
   paint-order: stroke;
   stroke: rgba(0,0,0,.35);
   stroke-width: 1px;
-  opacity: 1 !important;
 }
 
-/* 3) Подписи на РЁБРАХ (HTML-вариант, htmlLabels:true) — светлые плашки */
-.md-typeset .mermaid .edgeLabel .label,
-.md-typeset svg[id^="mermaid-"] foreignObject .edgeLabel .label {
+/* 3) ПОДПИСИ НА РЁБРАХ (HTML-вариант, если где-то включится htmlLabels:true) */
+.md-typeset .mermaid .edgeLabel .label {
   font-size: 22px !important;
   color: #111 !important;
   background: #e9edff !important;
@@ -41,25 +43,21 @@
   padding: 2px 6px;
 }
 
-/* 4) Заголовки САБГРАФОВ (кластеры) — СВЕТЛЫЕ */
+/* 4) ЗАГОЛОВКИ САБГРАФОВ (кластеры) — светлые */
 .md-typeset svg[id^="mermaid-"] g.cluster text,
+.md-typeset svg[id^="mermaid-"] g.cluster tspan,
+.md-typeset svg[id^="mermaid-"] g.cluster .text-outer-tspan,
+.md-typeset svg[id^="mermaid-"] g.cluster .text-inner-tspan,
 .md-typeset svg[id^="mermaid-"] .cluster-label,
 .md-typeset svg[id^="mermaid-"] text.cluster-label,
 .md-typeset svg[id^="mermaid-"] .cluster .label,
 .md-typeset svg[id^="mermaid-"] .cluster .title {
   fill: #e5e7eb !important;
   font-size: 22px !important;
-  opacity: 1 !important;
 }
 
-/* 5) Линии/стрелки — немного светлее, чтобы не терялись на тёмном фоне контейнеров */
+/* 5) Линии/стрелки — чуть светлее, чтобы не терялись на тёмном фоне */
 .md-typeset svg[id^="mermaid-"] .edgePath path,
 .md-typeset svg[id^="mermaid-"] path.flowchart-link {
   stroke: #c7ced6 !important;
-}
-
-/* 6) На случай, если тема или Mermaid задают fill-opacity */
-.md-typeset svg[id^="mermaid-"] text,
-.md-typeset svg[id^="mermaid-"] tspan {
-  fill-opacity: 1 !important;
 }

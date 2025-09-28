@@ -6,30 +6,43 @@
       startOnLoad: false,
       securityLevel: 'loose',
       theme: 'base',
-
       themeVariables: {
         fontSize: '22px',
         fontFamily: 'var(--md-text-font, system-ui, "Inter", "Roboto", sans-serif)',
         textColor: '#111',
         lineColor: '#e6edf5'
       },
-
+      // ВАЖНО: здесь уже переопределяем линии и стрелки
       themeCSS: `
-        g.node text, g.node tspan { fill:#111 !important; font-size:22px !important; }
+        /* --- Жёсткий оверрайд для линий и стрелок (flowchart-v2) --- */
+        .edgePath .path,
+        .flowchart-link {
+          stroke:#e6edf5 !important;
+          stroke-width:2px !important;
+          opacity:1 !important;
+          fill:none !important;
+        }
+        .marker,
+        .arrowheadPath,
+        .arrowMarkerPath,
+        defs marker path,
+        defs marker polygon {
+          fill:#e6edf5 !important;
+          stroke:#e6edf5 !important;
+          opacity:1 !important;
+        }
 
-        /* подписи на рёбрах */
+        /* читабельные подписи */
+        g.node text, g.node tspan { fill:#111 !important; font-size:22px !important; }
         g.label text, g.label tspan,
         g.edgeLabel text, g.edgeLabel tspan, text.edgeLabel, text.edgeLabel tspan {
           fill:#e5e7eb !important; font-size:22px !important;
           paint-order:stroke; stroke:rgba(0,0,0,.35); stroke-width:1px;
         }
         g.label rect.background { fill:rgba(0,0,0,.35) !important; stroke:transparent !important; rx:4px; ry:4px; }
-
-        /* заголовки сабграфов */
         g.cluster g.label text, g.cluster g.label tspan,
         g.cluster text, g.cluster tspan { fill:#e5e7eb !important; font-size:22px !important; }
       `,
-
       flowchart: {
         htmlLabels: false,
         nodeSpacing: 70,
@@ -41,46 +54,41 @@
     });
   }
 
-  function forceContrast(svg) {
-    const id = svg.getAttribute('id');
-    if (!id) return;
-
-    const css = `
-#${id} .flowchart-link, 
-#${id} .edgePath .path { 
-  stroke:#e6edf5 !important; 
-  stroke-width:2px !important; 
-  opacity:1 !important;
-}
-#${id} .marker, 
-#${id} .arrowheadPath, 
-#${id} defs marker path, 
-#${id} defs marker polygon { 
-  fill:#e6edf5 !important; 
-  stroke:#e6edf5 !important; 
-  opacity:1 !important;
-}
-`;
-
-    let styleEl = svg.querySelector('style');
-    if (!styleEl) {
-      styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
-      svg.prepend(styleEl);
-    }
-    styleEl.appendChild(document.createTextNode(css));
+  // Доп. гарантия: ставим инлайн-стили с !important на рёбра и маркеры после рендера
+  function patchSvg(svg) {
+    svg.querySelectorAll('.edgePath .path, .flowchart-link').forEach(p => {
+      p.style.setProperty('stroke', '#e6edf5', 'important');
+      p.style.setProperty('stroke-width', '2', 'important');
+      p.style.setProperty('opacity', '1', 'important');
+      p.style.setProperty('fill', 'none', 'important');
+    });
+    svg.querySelectorAll('marker, .marker').forEach(m => {
+      m.style.setProperty('fill', '#e6edf5', 'important');
+      m.style.setProperty('stroke', '#e6edf5', 'important');
+      m.style.setProperty('opacity', '1', 'important');
+    });
+    svg.querySelectorAll('.arrowheadPath, .arrowMarkerPath, marker path, marker polygon').forEach(p => {
+      p.style.setProperty('fill', '#e6edf5', 'important');
+      p.style.setProperty('stroke', '#e6edf5', 'important');
+      p.style.setProperty('opacity', '1', 'important');
+    });
   }
 
-  function runAndPatch() {
-    return window.mermaid.run({ querySelector: '.mermaid' })
-      .then(() => document.querySelectorAll('.mermaid svg').forEach(forceContrast));
+  async function render() {
+    await window.mermaid.run({ querySelector: '.mermaid' });
+    // На следующий тик: Mermaid закончит править <style> внутри SVG
+    setTimeout(() => {
+      document.querySelectorAll('.mermaid svg').forEach(patchSvg);
+    }, 0);
   }
 
   initMermaid();
-  runAndPatch();
+  render();
 
+  // Перерисовка при навигации (MkDocs Material)
   if (window.document$) {
-    window.document$.subscribe(() => { initMermaid(); runAndPatch(); });
+    window.document$.subscribe(() => { initMermaid(); render(); });
   } else {
-    document.addEventListener('DOMContentLoaded', () => { initMermaid(); runAndPatch(); });
+    document.addEventListener('DOMContentLoaded', () => { initMermaid(); render(); });
   }
 })();

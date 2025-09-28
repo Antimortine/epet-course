@@ -7,30 +7,42 @@
       securityLevel: 'loose',
       theme: 'base',
 
-      // 1) Крупный кегль + базовый тёмный текст
+      // Крупный кегль + базовый шрифт
       themeVariables: {
         fontSize: '22px',
         fontFamily: 'var(--md-text-font, system-ui, "Inter", "Roboto", sans-serif)',
-        textColor: '#111',
-        // подсветим заголовки сабграфов и подписи рёбер на всякий случай
-        clusterTitleColor: '#e5e7eb',
-        edgeLabelTextColor: '#e5e7eb'
+        textColor: '#111'
       },
 
-      // 2) Правила, встраиваемые ВНУТРЬ каждого SVG (перебивают всё остальное)
+      // Стили, встраиваемые ВНУТРЬ каждого SVG (побеждают тему и внешний CSS)
       themeCSS: `
         /* Узлы: тёмный текст на светлом фоне */
-        g.node text, .nodeLabel, .label { fill:#111 !important; color:#111 !important; font-size:22px !important; }
+        g.node text, g.node tspan {
+          fill:#111 !important; font-size:22px !important;
+        }
 
-        /* Подписи на рёбрах (htmlLabels:false — это SVG-текст) */
-        g.edgeLabel text, g.edgeLabel tspan, g.edgeLabel textPath, text.edgeLabel, .edgeLabel { 
-          fill:#e5e7eb !important; font-size:22px !important; 
+        /* Подписи на рёбрах — Mermaid 11 (g.label ...) */
+        g.label text,
+        g.label tspan,
+        g.label .text-outer-tspan,
+        g.label .text-inner-tspan {
+          fill:#e5e7eb !important; font-size:22px !important;
+          paint-order:stroke; stroke:rgba(0,0,0,.35); stroke-width:1px;
+        }
+        g.label rect.background {
+          fill:rgba(0,0,0,.35) !important; stroke:transparent !important; rx:4px; ry:4px;
+        }
+
+        /* Подписи на рёбрах — fallback для старой разметки (.edgeLabel) */
+        g.edgeLabel text, g.edgeLabel tspan, text.edgeLabel, text.edgeLabel tspan {
+          fill:#e5e7eb !important; font-size:22px !important;
           paint-order:stroke; stroke:rgba(0,0,0,.35); stroke-width:1px;
         }
 
-        /* Заголовки сабграфов (кластеры) */
-        g.cluster text, .cluster-label, text.cluster-label { 
-          fill:#e5e7eb !important; font-size:22px !important; 
+        /* Заголовки сабграфов (кластеры) — светлые */
+        g.cluster g.label text, g.cluster g.label tspan,
+        g.cluster text, g.cluster tspan {
+          fill:#e5e7eb !important; font-size:22px !important;
         }
 
         /* Линии — чуть светлее на тёмном контейнере */
@@ -38,7 +50,7 @@
       `,
 
       flowchart: {
-        htmlLabels: false,        // чтобы все лейблы были SVG-текстом (проще красить)
+        htmlLabels: false,            // все лейблы как SVG-текст — красить проще
         nodeSpacing: 70,
         rankSpacing: 120,
         subGraphTitleMargin: 32,
@@ -48,18 +60,24 @@
     });
   }
 
-  initMermaid();
+  function runMermaid() {
+    window.mermaid.run({ querySelector: '.mermaid' });
+  }
 
-  // Перерисовка при навигации в Material
+  // первый рендер
+  initMermaid();
+  runMermaid();
+
+  // перерисовка при навигации в Material
   if (window.document$) {
-    window.document$.subscribe(function () {
+    window.document$.subscribe(() => {
       initMermaid();
-      window.mermaid.run({ querySelector: '.mermaid' });
+      runMermaid();
     });
   } else {
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
       initMermaid();
-      window.mermaid.run({ querySelector: '.mermaid' });
+      runMermaid();
     });
   }
 })();

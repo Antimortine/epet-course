@@ -43,13 +43,23 @@
 **Схема Интерфейса PP-GWT в EPET:**
 
 ```mermaid
-%%{init: {'flowchart': { 'nodeSpacing': 60, 'rankSpacing': 70, 'wrappingWidth': 240 }}}%%
+%%{init: {
+  'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 110, 'wrappingWidth': 260, 'htmlLabels': true }
+}}%%
 graph TD
-    classDef hidden fill:transparent,stroke:transparent;
+    %% --- классы ---
+    classDef hidden fill:transparent,stroke:transparent,color:transparent;
+    classDef default color:#111;  %% чёрный текст по умолчанию для ВСЕХ нод
 
+    %% --- Пэддеры и невидимые рёбра (ДОЛЖНЫ идти самыми первыми!) ---
+    _padPP["\n\n"]:::hidden --> A
+    _padGWT["\n\n"]:::hidden --> E
+    linkStyle 0 stroke:transparent,fill:transparent;
+    linkStyle 1 stroke:transparent,fill:transparent;
+
+    %% --- Граф ---
     subgraph "Бессознательная Обработка (PP)"
         direction TB
-        _padPP[" "]:::hidden
         A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --> B(Сравнение с Сенсорикой);
         C[Сенсорный Вход] --> B;
         B -- "Восходящие Ошибки Предсказания" --> A;
@@ -58,16 +68,16 @@ graph TD
 
     subgraph "Сознательный Доступ (GWT)"
         direction TB
-        _padGWT[" "]:::hidden
-        D -- "Преодоление Порога" --> E["Глобальное Рабочее Пространство<br>(Нейронное Воспламенение)"];
-        E -- "Глобальное Вещание" --> F((Множество<br>Потребителей:<br>Память, Речь,<br>Планирование));
+        D -- "Преодоление Порога" --> E["`Глобальное Рабочее Пространство (Нейронное Воспламенение)`"];
+        E -- "Глобальное Вещание" --> F(("`Множество Потребителей: Память, Речь, Планирование`"));
     end
 
     E -- "Высокоуровневый Контекст/Ограничение" --> A;
 
-    %% --- Стили для контраста --- %%
-    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#000
-    style E fill:#ccf,stroke:#333,stroke-width:2px,color:#000
+    %% --- Точечные стили (оставляю твои) ---
+    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#111
+    style E fill:#ccf,stroke:#333,stroke-width:2px,color:#111
+
 ```
 
 **Заключение:**

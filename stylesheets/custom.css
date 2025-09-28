@@ -33,4 +33,48 @@
 }
 
 /* 2a) Фон плашки у подписи ребра (если есть rect.background в g.label) */
-.md-types
+.md-typeset svg[id^="mermaid-"] g.label rect.background {
+  fill: rgba(0,0,0,.35) !important;   /* мягкая подложка под светлый текст */
+  stroke: transparent !important;
+  rx: 4px; ry: 4px;
+}
+
+/* 3) ПОДПИСИ НА РЁБРАХ (старый вариант Mermaid: .edgeLabel) — тоже светлые */
+.md-typeset svg[id^="mermaid-"] g.edgeLabel text,
+.md-typeset svg[id^="mermaid-"] g.edgeLabel tspan,
+.md-typeset svg[id^="mermaid-"] text.edgeLabel,
+.md-typeset svg[id^="mermaid-"] text.edgeLabel tspan,
+.md-typeset svg[id^="mermaid-"] g.edgeLabel .text-outer-tspan,
+.md-typeset svg[id^="mermaid-"] g.edgeLabel .text-inner-tspan {
+  fill: #e5e7eb !important;
+  font-size: 22px !important;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,.35);
+  stroke-width: 1px;
+}
+
+/* 3a) HTML-лейблы рёбер (если где-то включится htmlLabels:true) */
+.md-typeset .mermaid .edgeLabel .label {
+  font-size: 22px !important;
+  color: #111 !important;
+  background: #e9edff !important;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* 4) ЗАГОЛОВКИ САБГРАФОВ (кластеры) — СВЕТЛЫЕ на тёмном боксе */
+.md-typeset svg[id^="mermaid-"] g.cluster g.label text,
+.md-typeset svg[id^="mermaid-"] g.cluster g.label tspan,
+.md-typeset svg[id^="mermaid-"] g.cluster text,
+.md-typeset svg[id^="mermaid-"] g.cluster tspan,
+.md-typeset svg[id^="mermaid-"] .cluster-label,
+.md-typeset svg[id^="mermaid-"] text.cluster-label {
+  fill: #e5e7eb !important;
+  font-size: 22px !important;
+}
+
+/* 5) Линии/стрелки — немного светлее, чтобы не терялись на тёмном фоне */
+.md-typeset svg[id^="mermaid-"] .edgePath path,
+.md-typeset svg[id^="mermaid-"] path.flowchart-link {
+  stroke: #c7ced6 !important;
+}

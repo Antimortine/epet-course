@@ -7,21 +7,20 @@
       securityLevel: 'loose',
       theme: 'base',
 
-      // Крупный кегль + базовый шрифт
+      // крупный кегль + базовые переменные темы
       themeVariables: {
         fontSize: '22px',
         fontFamily: 'var(--md-text-font, system-ui, "Inter", "Roboto", sans-serif)',
-        textColor: '#111'
+        textColor: '#111',
+        lineColor: '#e6edf5'   // ← светлые линии по умолчанию
       },
 
-      // Стили, встраиваемые ВНУТРЬ каждого SVG (побеждают тему и внешний CSS)
+      // ВСТРАИВАЕМЫЕ в SVG стили: бьют тему и внешний CSS
       themeCSS: `
         /* Узлы: тёмный текст на светлом фоне */
-        g.node text, g.node tspan {
-          fill:#111 !important; font-size:22px !important;
-        }
+        g.node text, g.node tspan { fill:#111 !important; font-size:22px !important; }
 
-        /* Подписи на рёбрах — Mermaid 11 (g.label ...) */
+        /* Подписи на рёбрах — Mermaid 11 (g.label …) */
         g.label text,
         g.label tspan,
         g.label .text-outer-tspan,
@@ -33,7 +32,7 @@
           fill:rgba(0,0,0,.35) !important; stroke:transparent !important; rx:4px; ry:4px;
         }
 
-        /* Подписи на рёбрах — fallback для старой разметки (.edgeLabel) */
+        /* Fallback для старой разметки .edgeLabel */
         g.edgeLabel text, g.edgeLabel tspan, text.edgeLabel, text.edgeLabel tspan {
           fill:#e5e7eb !important; font-size:22px !important;
           paint-order:stroke; stroke:rgba(0,0,0,.35); stroke-width:1px;
@@ -45,12 +44,34 @@
           fill:#e5e7eb !important; font-size:22px !important;
         }
 
-        /* Линии — чуть светлее на тёмном контейнере */
-        .edgePath path, path.flowchart-link { stroke:#c7ced6 !important; }
+        /* ===== ЛИНИИ И СТРЕЛКИ — СДЕЛАТЬ СВЕТЛЕЕ И ТОЛЩЕ ===== */
+        /* Сами рёбра */
+        .edgePath path, path.flowchart-link {
+          stroke:#e6edf5 !important;           /* светлый серо-голубой */
+          stroke-width:2px !important;         /* чуть толще, чтобы читалось */
+          opacity:1 !important;
+        }
+
+        /* Головки стрелок (сидят в <defs><marker>…>) */
+        marker path, marker polygon, marker rect, marker circle {
+          fill:#e6edf5 !important;
+          stroke:#e6edf5 !important;
+          opacity:1 !important;
+        }
+        /* На случай кастомных классов в разных релизах */
+        .arrowMarkerPath, .arrowHeadPath {
+          fill:#e6edf5 !important;
+          stroke:#e6edf5 !important;
+        }
+        /* Иногда генератор кладёт marker-элементы без классов — пробиваем через defs */
+        defs marker path, defs marker polygon {
+          fill:#e6edf5 !important;
+          stroke:#e6edf5 !important;
+        }
       `,
 
       flowchart: {
-        htmlLabels: false,            // все лейблы как SVG-текст — красить проще
+        htmlLabels: false,            // все лейблы как SVG-текст: красить проще и надёжнее
         nodeSpacing: 70,
         rankSpacing: 120,
         subGraphTitleMargin: 32,

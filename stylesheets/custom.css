@@ -1,25 +1,60 @@
-.mermaid svg text,
-.mermaid svg tspan { font-size: 22px !important; fill: #111 !important; }
-
-/* --- 1) Подписи на рёбрах (SVG) — сделать светлыми и крупными --- */
-.mermaid .edgeLabel text,
-.mermaid .edgeLabel tspan {
-  fill: #e5e7eb !important;      /* светлый текст */
+/* 0) База: кегль и тёмный цвет для ЛЮБОГО SVG-текста внутри диаграмм */
+.md-typeset .mermaid svg text,
+.md-typeset .mermaid svg tspan {
   font-size: 22px !important;
-  paint-order: stroke;            /* тонкий обвод для читабельности */
-  stroke: rgba(0,0,0,0.25);
+  fill: #111 !important;
+}
+
+/* 1) Текст внутри HTML-лейблов (если где-то включены htmlLabels:true) */
+.md-typeset .mermaid .label,
+.md-typeset .mermaid .nodeLabel,
+.md-typeset .mermaid .edgeLabel .label {
+  font-size: 22px !important;
+  color: #111 !important;
+  line-height: 1.25;
+}
+
+/* 2) Подписи на рёбрах — СВЕТЛЫЕ (поверх тёмного фона кластеров) */
+/* SVG-вариант (htmlLabels:false): <text class="edgeLabel"><tspan>… */
+.md-typeset .mermaid text.edgeLabel,
+.md-typeset .mermaid .edgeLabel,
+.md-typeset .mermaid .edgeLabel tspan,
+.md-typeset .mermaid text.edgeLabel tspan,
+.md-typeset .mermaid .edgeLabel text {
+  fill: #e5e7eb !important;
+  font-size: 22px !important;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.35);
   stroke-width: 1px;
 }
 
-/* --- 2) Заголовки сабграфов (кластеры) — тоже светлыми --- */
-.mermaid .cluster text,
-.mermaid .cluster .label,
-.mermaid .cluster-label text {
-  fill: #e5e7eb !important;      /* цвет текста в заголовке */
+/* HTML-вариант (htmlLabels:true): прямоугольные плашки у подписей рёбер */
+.md-typeset .mermaid .edgeLabel .label {
+  color: #111 !important;
+  background: #e9edff !important;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* 3) Заголовки сабграфов (кластеры) — СВЕТЛЫЕ */
+.md-typeset .mermaid .cluster text,
+.md-typeset .mermaid .cluster .label,
+.md-typeset .mermaid .cluster-label,
+.md-typeset .mermaid text.cluster-label,
+.md-typeset .mermaid .cluster .title {
+  fill: #e5e7eb !important;
   font-size: 22px !important;
 }
 
-/* (необязательно) чуть светлее линии, чтобы не терялись на тёмном фоне */
-.mermaid .edgePath path {
+/* 4) Чуть светлее линии и стрелки, чтобы не терялись на тёмном фоне */
+.md-typeset .mermaid .edgePath path,
+.md-typeset .mermaid path.flowchart-link {
   stroke: #c7ced6 !important;
 }
+
+/* 5) На всякий случай: убираем случайные прозрачности текста */
+.md-typeset .mermaid text,
+.md-typeset .mermaid tspan {
+  opacity: 1 !important;
+}
+

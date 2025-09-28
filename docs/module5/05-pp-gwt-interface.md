@@ -44,9 +44,9 @@
 
 ```mermaid
 %%{init: {
-  'theme': 'base',
-  'themeVariables': { 'fontSize': '22px', 'textColor': '#111' },
-  'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 120, 'wrappingWidth': 260, 'htmlLabels': false }
+  "theme": "base",
+  "themeVariables": { "fontSize": "22px", "textColor": "#111" },
+  "flowchart": { "htmlLabels": false, "nodeSpacing": 70, "rankSpacing": 120, "wrappingWidth": 260 }
 }}%%
 
 graph TD

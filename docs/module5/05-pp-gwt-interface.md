@@ -45,34 +45,43 @@
 ```mermaid
 %%{init: { 'flowchart': { 'nodeSpacing': 70, 'rankSpacing': 120, 'wrappingWidth': 260, 'htmlLabels': true }}}%%
 graph TD
+    %% --- классы ---
     classDef hidden fill:transparent,stroke:transparent,color:transparent;
-    classDef default color:#111;
+    classDef nodeLight fill:#f6f8ff,stroke:#334155,stroke-width:1px,color:#111;
+    classDef nodeAccent fill:#e9edff,stroke:#334155,stroke-width:1px,color:#111;
+    classDef nodeCircle fill:#e9edff,stroke:#334155,stroke-width:1px,color:#111;
 
-    %% Пэддеры (первые строки!) фиксируют отступ под заголовком сабграфа
+    %% --- Пэддеры (первые строки!) + невидимые рёбра для отступа заголовка ---
     _padPP["\n\n\n"]:::hidden --> A
     _padGWT["\n\n\n"]:::hidden --> E
     linkStyle 0 stroke:transparent,fill:transparent;
     linkStyle 1 stroke:transparent,fill:transparent;
 
-    subgraph "Бессознательная Обработка (PP)"
+    %% --- Граф ---
+    subgraph PP["Бессознательная Обработка (PP)"]
       direction TB
-      A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --> B(Сравнение с Сенсорикой);
-      C[Сенсорный Вход] --> B;
-      B -- "Восходящие Ошибки Предсказания" --> A;
-      A -- "Представления с Высокой Точностью" --> D{Конкуренция за Доступ};
+      A[Иерархическая Генеративная Модель] -- "Нисходящие Предсказания" --> B(Сравнение с Сенсорикой)
+      C[Сенсорный Вход] --> B
+      B -- "Восходящие Ошибки Предсказания" --> A
+      A -- "Представления с Высокой Точностью" --> D{Конкуренция за Доступ}
     end
 
-    subgraph "Сознательный Доступ (GWT)"
+    subgraph GWT["Сознательный Доступ (GWT)"]
       direction TB
-      D -- "Преодоление Порога" --> E["`Глобальное Рабочее Пространство (Нейронное Воспламенение)`"];
-      E -- "Глобальное Вещание" --> F(("`Множество Потребителей: Память, Речь, Планирование`"));
+      D -- "Преодоление Порога" --> E["Глобальное Рабочее Пространство<br>(Нейронное Воспламенение)"]
+      E -- "Глобальное Вещание" --> F(("Множество Потребителей:<br>Память, Речь, Планирование"))
     end
 
-    E -- "Высокоуровневый Контекст/Ограничение" --> A;
+    E -- "Высокоуровневый Контекст/Ограничение" --> A
 
-    %% При желании можно оставить точечные стили:
-    style A fill:#ffd6ff,stroke:#333,stroke-width:2px,color:#111
-    style E fill:#e6e9ff,stroke:#333,stroke-width:2px,color:#111
+    %% --- Кластеры/сабграфы: тёмные контейнеры с читаемым заголовком ---
+    style PP  fill:#2b2f36,stroke:#4b5563,stroke-width:1px,color:#e5e7eb
+    style GWT fill:#2b2f36,stroke:#4b5563,stroke-width:1px,color:#e5e7eb
+
+    %% --- Присвоение классов нодам (все светлые, читаемые) ---
+    class A,E nodeAccent
+    class B,C,D nodeLight
+    class F nodeCircle
 ```
 
 **Заключение:**

@@ -6,13 +6,14 @@
       startOnLoad: false,
       securityLevel: 'loose',
       theme: 'base',
+      // Гарантируем крупный кегль и тёмный текст
       themeVariables: {
         fontSize: '22px',
         fontFamily: 'var(--md-text-font, system-ui, "Inter", "Roboto", sans-serif)',
         textColor: '#111'
       },
       flowchart: {
-        htmlLabels: true,
+        htmlLabels: false,
         nodeSpacing: 70,
         rankSpacing: 120,
         subGraphTitleMargin: 32,
@@ -21,9 +22,7 @@
       }
     });
   }
-
   initMermaid();
-
   if (window.document$) {
     window.document$.subscribe(function () {
       initMermaid();
